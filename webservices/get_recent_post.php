@@ -1,7 +1,7 @@
 <?php
 require_once('../db_login.php');
 
-$queryResult = $db->query("SELECT post.idpost,post.judul,post.isi_post, post.tgl_insert, penulis.nama as namapenulis, komentar.isi as komentar FROM post JOIN penulis ON post.idpenulis=penulis.idpenulis JOIN komentar ON post.idpost=komentar.idkomentar ORDER BY idpost DESC LIMIT 6");
+$queryResult = $db->query("SELECT post.idpost,post.judul,post.isi_post, post.tgl_insert,post.idkategori, penulis.nama as namapenulis, kategori.nama as namakategori FROM post JOIN penulis ON post.idpenulis=penulis.idpenulis  JOIN kategori ON post.idkategori=kategori.idkategori ORDER BY idpost DESC LIMIT 6");
 $result = array();
 
 while ($row = mysqli_fetch_object($queryResult)) {
@@ -9,7 +9,8 @@ while ($row = mysqli_fetch_object($queryResult)) {
     $F["judul"] = $row->judul;
     $F["penulis"] = $row->namapenulis;
     $F["isi"] = $row->isi_post;
-    $F["komentar"] = $row->komentar;
+    $F["idkategori"] = $row->idkategori;
+    $F["namakategori"] = $row->namakategori;
     $F["tgl"] = $row->tgl_insert;
 
     array_push($result, $F);
