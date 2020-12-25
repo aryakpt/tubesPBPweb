@@ -12,8 +12,8 @@ while ($row = mysqli_fetch_object($queryResult)) {
     $F["tgl"] = $row->tgl_insert;
     $F["idkategori"] = $row->idkategori;
     $F["namakategori"] = $row->namakategori;
-    //$F["komentar"] = $row->isi;
-    //$F['gambar'] = base64_encode($row->file_gambar);
+    $F["komentar"] = $row->isi;
+    $F['gambar'] = base64_encode($row->file_gambar);
 
     array_push($result, $F);
 }
