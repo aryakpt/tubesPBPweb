@@ -1,7 +1,10 @@
 <?php
+
 require_once('../db_login.php');
 
-$queryResult = $db->query("SELECT post.idpost,post.judul,post.isi_post,post.file_gambar, post.tgl_insert,post.idkategori, penulis.nama as namapenulis, kategori.nama as namakategori, komentar.isi FROM post JOIN penulis ON post.idpenulis=penulis.idpenulis JOIN kategori ON post.idkategori=kategori.idkategori JOIN komentar ON komentar.idpost=post.idpost ORDER BY idpost DESC LIMIT 6");
+//$get = $_GET['idkategori'];
+
+$queryResult = $db->query("SELECT post.idpost,post.judul,post.isi_post,post.file_gambar, post.tgl_insert,post.idkategori, penulis.nama as namapenulis, kategori.nama as namakategori, komentar.isi FROM post JOIN penulis ON post.idpenulis=penulis.idpenulis JOIN kategori ON post.idkategori=kategori.idkategori JOIN komentar ON komentar.idpost=post.idpost ORDER BY idpost");
 $result = array();
 
 while ($row = mysqli_fetch_object($queryResult)) {
