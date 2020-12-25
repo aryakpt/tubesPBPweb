@@ -9,9 +9,9 @@ while ($row = mysqli_fetch_object($queryResult)) {
     $F["judul"] = $row->judul;
     $F["penulis"] = $row->namapenulis;
     $F["isi"] = $row->isi_post;
+    $F["tgl"] = $row->tgl_insert;
     $F["idkategori"] = $row->idkategori;
     $F["namakategori"] = $row->namakategori;
-    $F["tgl"] = $row->tgl_insert;
 
     array_push($result, $F);
 }
