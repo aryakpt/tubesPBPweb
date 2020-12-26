@@ -22,3 +22,4 @@ while ($row = mysqli_fetch_object($queryResult)) {
 
 echo json_encode($result);
 mysqli_close($db);
+?>
