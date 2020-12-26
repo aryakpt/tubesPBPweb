@@ -4,7 +4,7 @@ require_once('../db_login.php');
 
 //$get = $_GET['idkategori'];
 
-$queryResult = $db->query("SELECT post.idpost,post.judul,post.isi_post,post.file_gambar, post.tgl_insert,post.idkategori, penulis.nama as namapenulis, kategori.nama as namakategori, komentar.isi FROM post JOIN penulis ON post.idpenulis=penulis.idpenulis JOIN kategori ON post.idkategori=kategori.idkategori JOIN komentar ON komentar.idpost=post.idpost ORDER BY idpost");
+$queryResult = $db->query("SELECT post.idpost,post.judul,post.isi_post,post.file_gambar, post.tgl_insert,post.idkategori, penulis.nama as namapenulis, kategori.nama as namakategori FROM post JOIN penulis ON post.idpenulis=penulis.idpenulis JOIN kategori ON post.idkategori=kategori.idkategori ORDER BY idpost");
 $result = array();
 
 while ($row = mysqli_fetch_object($queryResult)) {
@@ -15,7 +15,6 @@ while ($row = mysqli_fetch_object($queryResult)) {
     $F["tgl"] = $row->tgl_insert;
     $F["idkategori"] = $row->idkategori;
     $F["namakategori"] = $row->namakategori;
-    $F["komentar"] = $row->isi;
     $F['gambar'] = base64_encode($row->file_gambar);
 
     array_push($result, $F);
