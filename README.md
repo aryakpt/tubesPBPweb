@@ -8,4 +8,6 @@ Aurora merupakan  web apps blog sederhana.
 
 1. Clone repository ini
 
-`At the command prompt, type nano`
+```bash
+At the command prompt
+```
