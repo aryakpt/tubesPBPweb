@@ -13,11 +13,11 @@ git clone https://github.com/aryakpt/tubesPBPweb.git
 cd tubesPBPweb
 ```
 
-2. Dwonload dan Import File MySQL
+2. Download dan Import File MySQL
 
-[db_blog.sql](db_blog.sql)
+File database: [db_blog.sql](https://drive.google.com/file/d/1WuTQEZpfEUMzgpPcRzZqcTj9ipamVcgc/view?usp=sharing)
 
 3. User
 
-admin@example.com | password.
+admin@example.com | password <br>
 penulis@example.com | password
